@@ -5,16 +5,16 @@ import java.awt.*;
  * @author Charles Zeng
  * @version 1.0
  */
-public class DrawCircle extends JFrame {
+public class DrawCircleTest extends JFrame {
 
     public static void main(String[] args) {
-        new DrawCircle();
+        new DrawCircleTest();
     }
 
     //Create the frame constructor
-    public DrawCircle() {
+    public DrawCircleTest() {
         //Initial the panel
-        MyPanel mp = new MyPanel();
+        MyPanelTest mp = new MyPanelTest();
         //add the panel in the frame
         this.add(mp);
         this.setSize(800, 600);
@@ -25,7 +25,7 @@ public class DrawCircle extends JFrame {
     }
 }
 
-class MyPanel extends JPanel {
+class MyPanelTest extends JPanel {
     //First open the panel or min or max the screen or repaint or change size
     @Override
     public void paint(Graphics g) {
