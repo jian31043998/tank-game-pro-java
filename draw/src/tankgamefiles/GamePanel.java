@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
  */
 public class GamePanel extends JPanel implements KeyListener {
 
-    MyTank myTank = new MyTank(80, 60, 2);
+    MyTank myTank = new MyTank(80, 60, 8);
 //    EnemyTank enemyTank01 = new EnemyTank(200, 60, 8);
 
     @Override
@@ -133,19 +133,19 @@ public class GamePanel extends JPanel implements KeyListener {
 
         if (e.getKeyCode() == KeyEvent.VK_W) {
             myTank.setDirection(8);
-            myTank.setAxisY(myTank.getAxisY() - 2);
+            myTank.moveUp();
 
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
             myTank.setDirection(2);
-            myTank.setAxisY(myTank.getAxisY() + 2);
+            myTank.moveDown();
 
         } else if (e.getKeyCode() == KeyEvent.VK_A) {
             myTank.setDirection(4);
-            myTank.setAxisX(myTank.getAxisX() - 2);
+            myTank.moveLeft();
 
         } else if (e.getKeyCode() == KeyEvent.VK_D) {
             myTank.setDirection(6);
-            myTank.setAxisX(myTank.getAxisX() + 2);
+            myTank.moveRight();
 
         }
         this.repaint();

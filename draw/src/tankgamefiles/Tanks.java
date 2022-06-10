@@ -6,6 +6,23 @@ public class Tanks {
     private int direction;
     private int campProfile;
 
+
+    public void moveUp() {
+        axisY -= 2;
+    }
+
+    public void moveDown() {
+        axisY += 2;
+    }
+
+    public void moveLeft() {
+        axisX -= 2;
+    }
+
+    public void moveRight() {
+        axisX += 2;
+    }
+
     public int getAxisX() {
         return axisX;
     }
