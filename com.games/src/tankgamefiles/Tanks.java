@@ -6,21 +6,33 @@ public class Tanks {
     private int direction;
     private int campProfile;
 
+    private int speed = 1;
+
+
+
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
     public void moveUp() {
-        axisY -= 2;
+        axisY -= speed;
     }
 
     public void moveDown() {
-        axisY += 2;
+        axisY += speed;
     }
 
     public void moveLeft() {
-        axisX -= 2;
+        axisX -= speed;
     }
 
     public void moveRight() {
-        axisX += 2;
+        axisX += speed;
     }
 
     public int getAxisX() {
@@ -55,10 +67,9 @@ public class Tanks {
         this.campProfile = campProfile;
     }
 
-    public Tanks(int axisX, int axisY, int direction) {
+    public Tanks(int axisX, int axisY) {
         this.axisX = axisX;
         this.axisY = axisY;
-        this.direction = direction;
 
     }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/draw/draw.iml" filepath="$PROJECT_DIR$/draw/draw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.games/com.games.iml" filepath="$PROJECT_DIR$/com.games/com.games.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tank-game-pro-java.iml" filepath="$PROJECT_DIR$/.idea/tank-game-pro-java.iml" />
     </modules>
   </component>

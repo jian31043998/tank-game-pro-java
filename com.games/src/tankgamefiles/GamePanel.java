@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Vector;
 
 /**
  * @author Charles Zeng
@@ -11,8 +12,22 @@ import java.awt.event.KeyListener;
  */
 public class GamePanel extends JPanel implements KeyListener {
 
-    MyTank myTank = new MyTank(80, 60, 8);
-//    EnemyTank enemyTank01 = new EnemyTank(200, 60, 8);
+    MyTank myTank;
+    Vector<EnemyTank> enemyTanks = new Vector<>();
+    int enemyTanksCount = 5;
+
+
+    public GamePanel() {
+        myTank =  new MyTank(120,800);
+        myTank.setSpeed(5);
+
+        for (int i = 0; i < enemyTanksCount; i++) {
+            enemyTanks.add(new EnemyTank(100 * (i + 1),0));
+        }
+
+    }
+
+    //    EnemyTank enemyTank01 = new EnemyTank(200, 60, 8);
 
     @Override
     public void paint(Graphics g) {
@@ -22,6 +37,10 @@ public class GamePanel extends JPanel implements KeyListener {
         g.setColor(Color.black);
         g.fillRect(0, 0, 1920, 1080);
         drawTank(g, myTank);
+        for (EnemyTank enemyTank : enemyTanks) {
+            drawTank(g, enemyTank);
+        }
+
 
 
     }
@@ -45,7 +64,7 @@ public class GamePanel extends JPanel implements KeyListener {
         }
 
         switch (t.getDirection()) {
-            // straight 8
+            //Straight:8
             case 8:
                 //The first rect of tank foot
                 g.fill3DRect(t.getAxisX(), t.getAxisY(), 10, 60, false);
@@ -62,7 +81,7 @@ public class GamePanel extends JPanel implements KeyListener {
                 //tank barrel
                 g.drawLine(t.getAxisX() + 20,t.getAxisY(),t.getAxisX()+20,t.getAxisY()+30);
                 break;
-            // right: 6
+            //Right: 6
             case 6:
                 //The first rect of tank foot
                 g.fill3DRect(t.getAxisX() - 10, t.getAxisY() + 10, 60, 10, false);
@@ -80,7 +99,7 @@ public class GamePanel extends JPanel implements KeyListener {
                 g.drawLine(t.getAxisX() + 20 +30,t.getAxisY()+30,t.getAxisX()+20,t.getAxisY()+30);
                 break;
 
-            //4: left
+            //Left: 4
             case 4:
                 //The first rect of tank foot
                 g.fill3DRect(t.getAxisX() - 10, t.getAxisY() + 10, 60, 10, false);
@@ -97,7 +116,7 @@ public class GamePanel extends JPanel implements KeyListener {
                 //tank barrel
                 g.drawLine(t.getAxisX()-10,t.getAxisY()+30,t.getAxisX()+20,t.getAxisY()+30);
                 break;
-
+            //Back: 2
             case 2:
                 //The first rect of tank foot
                 g.fill3DRect(t.getAxisX(), t.getAxisY(), 10, 60, false);
@@ -117,7 +136,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
 
             default:
-                System.out.println(" ");
+
         }
 
 
